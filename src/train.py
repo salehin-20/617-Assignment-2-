@@ -12,6 +12,12 @@ from torchvision import transforms
 from dataset import GarbageDataset
 from model import MultiModalNet
 
+# This script performs the following steps:
+#   1. Load dataset
+#   2. Split dataset into training and validation sets
+#   3. Train the model for a specified number of epochs
+#   4. Evaluate validation accuracy
+#   5. Save the best performing model checkpoint
 
 @dataclass
 class TrainConfig:

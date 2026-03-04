@@ -2,6 +2,13 @@ import torch
 import torch.nn as nn
 from torchvision import models
 
+# Multimodal classification model that combines image and text features.
+#
+# The architecture consists of:
+#   1. Image Encoder  -> CNN extracting visual features
+#   2. Text Encoder   -> Embedding + mean pooling to represent text
+#   3. Fusion Layer   -> Concatenates image and text features
+#   4. Classifier     -> Fully connected layers that output class
 
 class MultiModalNet(nn.Module):
     def __init__(self, num_classes=4, text_vocab_size=256, text_emb_dim=64):

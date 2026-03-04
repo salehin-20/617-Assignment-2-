@@ -7,6 +7,8 @@ from sklearn.metrics import classification_report, confusion_matrix
 from dataset import GarbageDataset
 from model import MultiModalNet
 
+# Evaluation script used to measure model performance on the dataset.
+# This script loads a trained checkpoint and computes classification metrics such as accuracy and confusion matrix.
 
 def main():
     ap = argparse.ArgumentParser()

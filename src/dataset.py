@@ -8,7 +8,13 @@ from torch.utils.data import Dataset
 
 IMG_EXTENSIONS = (".jpg", ".jpeg", ".png")
 
-
+# The dataset expects the following folder structure:
+#
+# dataset/
+#   ├── Black/
+#   ├── Blue/
+#   ├── Green/
+#   └── Other/
 class GarbageDataset(Dataset):
     """
     Multimodal dataset:
@@ -69,6 +75,9 @@ class GarbageDataset(Dataset):
         if len(ids) < self.max_text_len:
             ids += [0] * (self.max_text_len - len(ids))
         return torch.tensor(ids, dtype=torch.long)
+
+    # __getitem__ retrieves a single sample from the dataset.
+    # It returns: image tensor, encoded text tokens and numerical label.
 
     def __getitem__(self, idx: int):
         img_path, text, label = self.samples[idx]
