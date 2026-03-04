@@ -62,11 +62,15 @@ The model is a **multimodal neural network**:
 ## Project Setup
 
 ### Create and activate a virtual environment
+```bash
 python -m venv .venv
 source .venv/bin/activate
+```
 
 ### Install dependencies
+```bash
 pip install -r requirements.txt
+```
 
 ---
 
